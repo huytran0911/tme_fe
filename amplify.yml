@@ -8,9 +8,10 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: dist
+    baseDirectory: .next  # THAY 'dist' THÀNH '.next'
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
+      - .next/cache/**/* # Thêm dòng này để build lần sau nhanh hơn
