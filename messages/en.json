@@ -1,0 +1,752 @@
+{
+  "Header": {
+    "searchPlaceholder": "Search products, part numbers...",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "support": "Support",
+      "newItems": "New arrivals",
+      "promo": "Promotions",
+      "order": "Order",
+      "contact": "Contact"
+    },
+    "orders": "Orders",
+    "login": "Login",
+    "cart": "Cart",
+    "cartDetails": "View details",
+    "hotlineLabel": "Hotline",
+    "toggleSidebar": "Toggle menu",
+    "language": {
+      "vi": "Vietnamese",
+      "en": "English"
+    },
+    "userMenu": {
+      "greeting": "Hello",
+      "myAccount": "My account",
+      "myOrders": "My orders",
+      "wishlist": "Wishlist",
+      "viewedProducts": "Recently viewed",
+      "addresses": "Address book",
+      "logout": "Logout"
+    },
+    "account": "Account",
+    "loginOrRegister": "Login / Register",
+    "register": "Register"
+  },
+  "Sidebar": {
+    "title": "Components categories",
+    "panelTitle": "Product categories",
+    "panelDescription": "Browse by component groups, modules, sensors...",
+    "searchPlaceholder": "Search categories...",
+    "noResults": "No categories found."
+  },
+  "Footer": {
+    "companyName": "Thien Minh Electronic Solutions Co., Ltd.",
+    "brandLine": "TME - Thien Minh Electronics",
+    "addressLabel": "Address:",
+    "phoneLabel": "Phone:",
+    "faxLabel": "Fax:",
+    "emailLabel": "Email:",
+    "policiesTitle": "POLICIES",
+    "policy": {
+      "purchase": "Purchase policies",
+      "warranty": "Warranty policy",
+      "commitment": "Store commitment",
+      "partner": "Partner program"
+    },
+    "socialTitle": "SOCIAL MEDIA",
+    "paymentTitle": "PAYMENT METHODS",
+    "copyrightLine1": "Copyright © 2009 by Thien Minh Electronic Solutions Co.,Ltd. - All Rights Reserved.",
+    "copyrightLine2": "220 Tan Phuoc - Ward 6 - District 10 - HCMC — Tel: 028.3957.3224 — Fax: 028.6264.3029"
+  },
+  "Home": {
+    "hero": {
+      "title": "COMPLETE COMPONENTS FOR YOUR PROJECTS",
+      "subtitle": "Save up to 60% on microcontrollers, sensors, RF modules and power supplies. Limited stock available.",
+      "button": "View promotions"
+    },
+    "featured": {
+      "title": "Featured products",
+      "viewAll": "View all"
+    },
+    "products": {
+      "loadError": "Unable to load product list.",
+      "empty": "No products available."
+    },
+    "breadcrumb": "Home",
+    "categoryProducts": {
+      "title": "Products by category",
+      "selectCategory": "Select a category",
+      "emptyHint": "Select a category from the sidebar to view products."
+    }
+  },
+  "Auth": {
+    "login": {
+      "breadcrumb": "Home / Login",
+      "title": "Login",
+      "subtitle": "Track orders, save your cart and receive offers from TME.",
+      "identifierLabel": "Email or phone number",
+      "identifierPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forgot password?",
+      "rememberMe": "Remember me",
+      "rememberHint": "Multi-layer security for your account",
+      "submit": "Login",
+      "submitting": "Logging in...",
+      "signupPrompt": "Don't have an account?",
+      "signupLink": "Register now",
+      "errors": {
+        "loginMissing": "Please enter username/email and password.",
+        "loginFail": "An error occurred, please try again."
+      }
+    },
+    "register": {
+      "breadcrumb": "Home / Register",
+      "title": "Create an account",
+      "subtitle": "Fill in your details to shop faster and get offers from TME.",
+      "submit": "Register",
+      "submitting": "Processing...",
+      "reset": "Reset",
+      "loginPrompt": "Already have an account?",
+      "loginLink": "Login now",
+      "success": "Registration successful, please log in.",
+      "errors": {
+        "loginMissing": "Please enter username/email and password.",
+        "registerFail": "An error occurred, please try again.",
+        "passwordMismatch": "Passwords do not match."
+      },
+      "sections": {
+        "personal": "Personal information",
+        "personalNote": "Used for billing and shipping.",
+        "contact": "Contact information",
+        "access": "Access information"
+      },
+      "labels": {
+        "fullName": "Full name *",
+        "company": "Company",
+        "address": "Address *",
+        "gender": "Gender *",
+        "city": "City / Province *",
+        "country": "Country *",
+        "phone": "Phone *",
+        "email": "E-mail *",
+        "username": "Username *",
+        "password": "Password *",
+        "confirmPassword": "Confirm password *"
+      },
+      "placeholders": {
+        "fullName": "John Doe",
+        "company": "Company name",
+        "address": "Street, district",
+        "phone": "09xxxxxxxx",
+        "email": "you@example.com",
+        "username": "tmeuser",
+        "password": "********",
+        "confirmPassword": "********"
+      },
+      "requirements": {
+        "title": "Minimum requirements",
+        "noSpace": "No spaces",
+        "minChars": "At least 4 characters"
+      },
+      "passwordStrength": "Password strength"
+    }
+  },
+  "CategoryMenu": {
+    "title": "Product categories",
+    "subtitle": "Browse by component groups, modules, sensors...",
+    "sidebarTitle": "Component list",
+    "componentList": "Component list",
+    "categoriesLabel": "Categories",
+    "browseButton": "Browse",
+    "searchPlaceholder": "Search categories...",
+    "loading": "Loading categories...",
+    "error": "Unable to load categories.",
+    "noCategories": "No categories found.",
+    "close": "Close",
+    "mobileTitle": "Product categories",
+    "level1Label": "Level 1"
+  },
+  "About": {
+    "breadcrumb": "Home",
+    "title": "ABOUT US",
+    "subtitle": "TME.vn - Your Trusted Partner",
+    "loading": "Loading content...",
+    "loadError": "Unable to load content.",
+    "features": {
+      "trusted": {
+        "title": "Trusted",
+        "desc": "15+ years experience"
+      },
+      "fast": {
+        "title": "Fast",
+        "desc": "Nationwide delivery"
+      },
+      "warranty": {
+        "title": "Warranty",
+        "desc": "Clear policies"
+      }
+    }
+  },
+  "Contact": {
+    "breadcrumb": "Home",
+    "title": "CONTACT US",
+    "subtitle": "Connect with TME.vn - We are always ready to assist you",
+    "loading": "Loading content...",
+    "loadError": "Unable to load content.",
+    "features": {
+      "phone": {
+        "title": "Phone",
+        "desc": "028.3957.3224"
+      },
+      "email": {
+        "title": "Email",
+        "desc": "sale@tme.com.vn"
+      },
+      "address": {
+        "title": "Address",
+        "desc": "220 Tan Phuoc, D.10"
+      }
+    },
+    "form": {
+      "title": "Send a contact request",
+      "description": "If you have a specific request, please fill in the form below. We will get back to you as soon as possible.",
+      "department": "Select department",
+      "departmentPlaceholder": "-- Select department --",
+      "departments": {
+        "sales": "Sales",
+        "support": "Technical support",
+        "admin": "Website admin",
+        "support_sale": "Order",
+        "support_tech": "Technical Support",
+        "than_phien": "WebAdmin",
+        "menu_orders": "Orders"
+      },
+      "loadingDepartments": "Loading...",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "John Doe",
+      "position": "Position",
+      "positionPlaceholder": "Engineer / Director...",
+      "company": "Company name",
+      "companyPlaceholder": "ABC Company",
+      "address": "Address",
+      "addressPlaceholder": "Street, district",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "website": "Website",
+      "websitePlaceholder": "https://example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "028.xxxx.xxxx",
+      "mobile": "Mobile",
+      "mobilePlaceholder": "09xxxxxxxx",
+      "fax": "Fax number",
+      "faxPlaceholder": "028.xxxx.xxxx",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject of your request",
+      "message": "Message",
+      "messagePlaceholder": "Describe your request in detail...",
+      "file": "Attachment",
+      "chooseFile": "Choose file",
+      "noFileChosen": "No file chosen",
+      "fileHint": "Max 2MB (.doc, .xls, .gif, .jpg, .zip, .rar, .pdf)",
+      "fileTooLarge": "File exceeds 2MB",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "successMessage": "Thank you for contacting us! We will respond as soon as possible.",
+      "errorMessage": "An error occurred. Please try again later.",
+      "uploadError": "Failed to upload file. Please try again.",
+      "requiredNote": "Required field"
+    }
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "noResults": "No results",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "home": "Home",
+    "items": "items",
+    "loadMore": "Load more",
+    "noImage": "No image"
+  },
+  "Pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "Cart": {
+    "title": "Shopping Cart",
+    "yourCart": "Your Shopping Cart",
+    "itemCount": "{count} items",
+    "loading": "Loading cart...",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue shopping",
+    "products": "Products",
+    "clearAll": "Clear all",
+    "clearConfirm": "Are you sure you want to clear the cart?",
+    "clearConfirmTitle": "Clear entire cart?",
+    "clearConfirmMessage": "All items in your cart will be removed. This action cannot be undone.",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "bundleDiscount": "Bundle discount",
+    "total": "Total",
+    "viewCart": "View cart",
+    "checkout": "Checkout",
+    "selectAll": "Select all",
+    "selectedCount": "{count} items selected",
+    "noItemsSelected": "Select items to buy",
+    "checkoutSelected": "Checkout ({count})",
+    "discountLabel": "SALE",
+    "bulkPrice": "Bulk price",
+    "subtotalLabel": "Subtotal:",
+    "stockWarning": "Only {count} items left",
+    "giftValue": "Gift value",
+    "shippingNote": "Shipping calculated at checkout",
+    "gifts": {
+      "title": "🎁 Free Gifts",
+      "quantity": "Qty: {count}",
+      "free": "FREE",
+      "forProduct": "With purchase of",
+      "value": "Value",
+      "outOfStock": "Out of stock"
+    },
+    "promotions": {
+      "title": "🏷️ Promotions",
+      "applied": "Applied",
+      "discount": "Save {amount}₫",
+      "discountPercent": "Save {percent}%",
+      "freeShipping": "Free shipping",
+      "buyMore": "Spend {amount}₫ more to get {benefit}",
+      "bestDiscount": "Promotion",
+      "minOrder": "Min. order {amount}₫",
+      "applyAtCheckout": "Applied at checkout",
+      "checkoutHint": "💡 You have promotions available at checkout"
+    },
+    "points": {
+      "title": "Reward Points",
+      "use": "Use points",
+      "available": "Available points",
+      "useAll": "Use all",
+      "deduction": "Points deduction"
+    }
+  },
+  "Checkout": {
+    "title": "Checkout",
+    "breadcrumb": "Checkout",
+    "shippingInfo": "Shipping Information",
+    "paymentMethod": "Payment Method",
+    "orderSummary": "Order Summary",
+    "placeOrder": "Place Order",
+    "processing": "Processing...",
+    "checkingAuth": "Checking authentication...",
+    "customerInfo": "Customer Information",
+    "orderItems": "Order Items",
+    "items": "items",
+    "backToCart": "← Back to cart",
+    "subtotal": "Subtotal",
+    "saleOffDiscount": "Product discount",
+    "discount": "Discount",
+    "total": "Total",
+    "warning": "Warning:",
+    "termsNote": "By placing your order, you agree to our terms of service.",
+    "emptyCart": "Your cart is empty",
+    "emptyCartMessage": "Please add products to your cart before checkout.",
+    "continueShopping": "Continue Shopping",
+    "cartIssues": "Cart has issues: {issues}. Please review.",
+    "phoneNote": "Used for contact and order tracking",
+    "labels": {
+      "fullName": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email",
+      "address": "Address",
+      "note": "Note"
+    },
+    "placeholders": {
+      "fullName": "Enter your full name",
+      "phone": "e.g., 0901234567",
+      "email": "e.g., email@example.com",
+      "address": "Enter delivery address",
+      "note": "Order notes (optional)"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Invalid phone number (e.g., 0901234567)",
+      "emailInvalid": "Invalid email address"
+    },
+    "payment": {
+      "cod": "Cash on Delivery (COD)",
+      "bank": "Bank Transfer"
+    },
+    "confirm": {
+      "title": "Confirm Order",
+      "message": "Please review your information before placing the order.",
+      "customer": "Customer:",
+      "phone": "Phone:",
+      "itemCount": "Items:",
+      "total": "Total:",
+      "goBack": "Go Back",
+      "submit": "Confirm"
+    },
+    "addressBook": {
+      "title": "Address Book",
+      "select": "Select saved address",
+      "default": "Default",
+      "noAddresses": "No saved addresses",
+      "manualInput": "Manual input"
+    }
+  },
+  "ProductCard": {
+    "noImage": "No image",
+    "outOfStock": "Out of stock",
+    "contact": "Contact",
+    "available": "Available {count}",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now",
+    "priceFrom": "From"
+  },
+  "Products": {
+    "loadMore": "Load more products",
+    "loadingMore": "Loading...",
+    "showing": "Showing",
+    "of": "of",
+    "products": "products",
+    "loading": "Loading products...",
+    "loadError": "Unable to load products.",
+    "empty": "No products found.",
+    "updated": "Updated:",
+    "sortDefault": "Sort by",
+    "sortPriceLowHigh": "Price: Low to High",
+    "sortPriceHighLow": "Price: High to Low",
+    "sortNewest": "Newest First",
+    "sortNameAZ": "Name: A to Z"
+  },
+  "ProductFilter": {
+    "title": "Filters",
+    "brand": "Brand",
+    "origin": "Origin",
+    "pinType": "Pin Type",
+    "pinCount": "Pin Count",
+    "packed": "Category",
+    "all": "-- All --",
+    "reset": "Clear filters",
+    "selected": "selected",
+    "sortBy": "Sort By",
+    "sortPriceLowHigh": "Price: Low to High",
+    "sortPriceHighLow": "Price: High to Low",
+    "sortNewest": "Newest First",
+    "sortNameAZ": "Name: A to Z",
+    "clearSort": "Clear sort"
+  },
+  "ProductDetail": {
+    "code": "Code",
+    "provider": "Provider",
+    "type": "Type",
+    "origin": "Origin",
+    "unit": "Unit",
+    "stock": "Stock",
+    "outOfStock": "Out of stock",
+    "quantity": "Quantity",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now",
+    "contact": "Contact",
+    "items": "items",
+    "close": "Close",
+    "selectVariant": "Please select a product variant",
+    "noCartSupport": "This product doesn't support online cart",
+    "wholesale": {
+      "title": "Wholesale Pricing",
+      "viewMore": "View More",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "savings": "Savings",
+      "buyItems": "Buy",
+      "itemsFor": "items for only",
+      "close": "Close"
+    },
+    "tabs": {
+      "info": "Product information",
+      "related": "Suggested products",
+      "similar": "Similar products"
+    },
+    "noRelated": "No suggested products.",
+    "noSimilar": "No similar products."
+  },
+  "Register": {
+    "genders": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "selectCity": "Select City / Province",
+    "selectCountry": "Select Country"
+  },
+  "OrderTracking": {
+    "breadcrumb": "Order Tracking",
+    "title": "Order Tracking",
+    "orderCode": "Order Code",
+    "phoneNumber": "Phone Number",
+    "phonePlaceholder": "Required to cancel order",
+    "codePlaceholder": "e.g., 20250111-143022-A1B2C3",
+    "searching": "Searching...",
+    "search": "Search",
+    "orderNotFound": "Order not found. Please check the order code.",
+    "orderDate": "Order Date",
+    "customerInfo": "Customer Information",
+    "name": "Name:",
+    "phone": "Phone:",
+    "address": "Address:",
+    "items": "Items",
+    "total": "Total",
+    "cancelOrder": "Cancel Order",
+    "phoneRequired": "Enter phone number to cancel order",
+    "note": "Note",
+    "confirmCancel": "Confirm Cancellation",
+    "cancelWarning": "Are you sure you want to cancel this order? This action cannot be undone.",
+    "goBack": "Go Back",
+    "orderCancelled": "Order Cancelled",
+    "bundle": "Bundle",
+    "status": {
+      "new": "New",
+      "confirmed": "Confirmed",
+      "processing": "Processing",
+      "shipping": "Shipping",
+      "delivered": "Delivered"
+    }
+  },
+  "OrderSuccess": {
+    "breadcrumb": "Order Success",
+    "title": "Order Placed Successfully!",
+    "subtitle": "Thank you for your order. We will contact you shortly.",
+    "orderCode": "Order Code",
+    "statusLabel": "Status:",
+    "totalLabel": "Total:",
+    "customerLabel": "Customer:",
+    "notFound": "Order information not found.",
+    "goHome": "Go to Homepage",
+    "importantNotes": "Important Notes",
+    "note1": "Please save your order code for tracking.",
+    "note2": "Our staff will contact you to confirm within 24 hours.",
+    "note3": "You can cancel while status is 'New Order'.",
+    "trackOrder": "Track Order",
+    "continueShopping": "Continue Shopping",
+    "needHelp": "Need Help?",
+    "helpText": "If you have any questions about your order, please contact us.",
+    "contactSupport": "Contact Support"
+  },
+  "News": {
+    "title": "Latest News",
+    "viewAll": "View all",
+    "noImage": "No image"
+  },
+  "QuickVariant": {
+    "title": {
+      "cart": "Add to Cart",
+      "buy": "Buy Now"
+    },
+    "productNotFound": "Product not found",
+    "quantityPricing": "Quantity pricing:",
+    "available": "{count} available"
+  },
+  "NewsPage": {
+    "breadcrumbNews": "News",
+    "pageTitle": "News & Announcements",
+    "articleCount": "{count} articles",
+    "filterAll": "All",
+    "loadError": "Unable to load news.",
+    "empty": "No news available.",
+    "noImage": "No image",
+    "invalidId": "Invalid news ID",
+    "backToList": "Back to news list",
+    "loadArticleError": "Unable to load article.",
+    "retry": "Retry",
+    "goBack": "Go back",
+    "views": "views",
+    "backToNewsList": "Back to news list"
+  },
+  "ProductsPage": {
+    "breadcrumb": "Products",
+    "allProducts": "All Products",
+    "searchResults": "Search results",
+    "selectCategory": "Please select a category from the left menu to view products"
+  },
+  "Sort": {
+    "sortBy": "Sort by",
+    "popular": "Popular",
+    "newest": "Newest",
+    "bestSelling": "Best Selling",
+    "price": "Price",
+    "priceLowHigh": "Price: Low to High",
+    "priceHighLow": "Price: High to Low"
+  },
+  "NewItems": {
+    "breadcrumb": "Home / New arrivals",
+    "title": "New arrivals by month",
+    "subtitle": "Select a month and year to view new products.",
+    "monthLabel": "Month",
+    "yearLabel": "Year",
+    "totalProducts": "Total products",
+    "loading": "Loading...",
+    "error": "An error occurred, please try again.",
+    "empty": "No products this month.",
+    "months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    },
+    "table": {
+      "code": "Code",
+      "description": "Description",
+      "price": "Retail price",
+      "quantity": "In stock",
+      "dateAdded": "Date added"
+    }
+  },
+  "Account": {
+    "memberLabel": "Member",
+    "menu": {
+      "profile": "My Account",
+      "orders": "My Orders",
+      "wishlist": "Wishlist",
+      "addresses": "Address Book"
+    }
+  },
+  "AccountProfile": {
+    "breadcrumb": "My Account",
+    "title": "Account Information",
+    "username": "Username",
+    "fullName": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "memberSince": "Member since",
+    "notProvided": "Not provided",
+    "edit": "Edit",
+    "save": "Save changes",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "updateSuccess": "Profile updated successfully!",
+    "updateError": "Failed to update profile.",
+    "changePassword": {
+      "title": "Change Password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "submit": "Change Password",
+      "submitting": "Processing...",
+      "success": "Password changed successfully!",
+      "error": "Failed to change password.",
+      "mismatch": "Passwords do not match.",
+      "tooShort": "Password must be at least 6 characters.",
+      "required": "Please fill in all fields."
+    }
+  },
+  "Addresses": {
+    "breadcrumb": "Address Book",
+    "title": "Address Book",
+    "addAddress": "Add new address",
+    "empty": {
+      "title": "No addresses yet",
+      "description": "Add your first delivery address.",
+      "action": "Add your first address"
+    },
+    "card": {
+      "default": "Default",
+      "setDefault": "Set as default",
+      "edit": "Edit",
+      "delete": "Delete",
+      "badge3Level": "3-level",
+      "badge2Level": "2-level"
+    },
+    "form": {
+      "titleAdd": "Add New Address",
+      "titleEdit": "Edit Address",
+      "currentAddress": "Current address",
+      "addressTypeLabel": "Address type",
+      "addressType3Level": "3-level admin",
+      "addressType3LevelDesc": "Province → District → Ward",
+      "addressType2Level": "2-level admin",
+      "addressType2LevelDesc": "Province/City → Ward",
+      "recipientName": "Recipient name",
+      "recipientNamePlaceholder": "Name of the recipient",
+      "phone": "Phone number",
+      "phonePlaceholder": "e.g., 0912345678",
+      "email": "Email",
+      "emailPlaceholder": "e.g., email@example.com",
+      "addressName": "Address label",
+      "addressNamePlaceholder": "e.g., Home, Office",
+      "province": "Province / City",
+      "provincePlaceholder": "Select province / city",
+      "district": "District",
+      "districtPlaceholder": "Select district",
+      "ward": "Ward",
+      "wardPlaceholder": "Select ward",
+      "detailAddress": "Detail address",
+      "detailAddressPlaceholder": "House number, street name...",
+      "isDefault": "Set as default address",
+      "saving": "Saving...",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "deleteConfirm": {
+      "title": "Delete Address",
+      "message": "Are you sure you want to delete this address? This action cannot be undone.",
+      "confirm": "Delete",
+      "cancel": "Cancel"
+    },
+    "toast": {
+      "createSuccess": "Address added successfully!",
+      "updateSuccess": "Address updated successfully!",
+      "deleteSuccess": "Address deleted successfully!",
+      "setDefaultSuccess": "Default address updated!",
+      "error": "An error occurred. Please try again."
+    },
+    "validation": {
+      "addressNameRequired": "Address label is required",
+      "recipientNameRequired": "Recipient name is required",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Phone number is invalid",
+      "emailInvalid": "Email is invalid",
+      "provinceRequired": "Please select a province/city",
+      "districtRequired": "Please select a district",
+      "wardRequired": "Please select a ward",
+      "detailAddressRequired": "Detail address is required"
+    },
+    "loginRequired": "Please log in to manage your addresses."
+  },
+  "RecentlyViewed": {
+    "title": "Recently Viewed",
+    "empty": "You haven't viewed any products yet.",
+    "clear": "Clear history"
+  },
+  "Wishlist": {
+    "title": "Wishlist",
+    "added": "Added to wishlist ❤️",
+    "removed": "Removed from wishlist",
+    "empty": "Your wishlist is empty.",
+    "emptyHint": "Click the ❤️ icon on any product to save it.",
+    "loginRequired": "Please log in to save products to your wishlist.",
+    "inactive": "Discontinued",
+    "removeFromList": "Remove from list",
+    "total": "{count} items"
+  }
+}
