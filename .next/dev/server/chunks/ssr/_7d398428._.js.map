@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/tme/Tme.vn-v2/app/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\r\nimport \"./globals.css\";\r\n\r\nexport const metadata: Metadata = {\r\n  title: \"TME - Thien Minh Electronics\",\r\n  description: \"Cua hang linh kien dien tu TME - Thien Minh Electronics\",\r\n};\r\n\r\nexport default function RootLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return (\r\n    <html lang=\"vi\">\r\n      <body className=\"bg-background text-slate-900\">{children}</body>\r\n    </html>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;;;;;AAGO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBACE,6VAAC;QAAK,MAAK;kBACT,cAAA,6VAAC;YAAK,WAAU;sBAAgC;;;;;;;;;;;AAGtD"}},
+    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":["file:///D:/tme/Tme.vn-v2/node_modules/.pnpm/next%4016.0.3_%40babel%2Bcore%407.2_a6e7fe7b2107bfd5c9e45031e322c5c3/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4MACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

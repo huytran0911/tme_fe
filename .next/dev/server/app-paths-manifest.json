@@ -1,0 +1,11 @@
+{
+  "/[locale]/auth/login/page": "app/[locale]/auth/login/page.js",
+  "/[locale]/cart/page": "app/[locale]/cart/page.js",
+  "/[locale]/checkout/page": "app/[locale]/checkout/page.js",
+  "/[locale]/gioi-thieu/page": "app/[locale]/gioi-thieu/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/products/[productId]/page": "app/[locale]/products/[productId]/page.js",
+  "/[locale]/products/page": "app/[locale]/products/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
+}

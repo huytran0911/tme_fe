@@ -1,0 +1,184 @@
+[00:00:02.706] Server  LOG      ✓ Ready in 2.4s
+[00:00:19.385] Server  LOG      ○ Compiling / ...
+[00:00:33.587] Server  LOG      ○ Compiling /[locale] ...
+[00:00:40.074] Server  LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:40.075] Server  LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:40.076] Server  LOG     [HomeProductsSection] Groups with products: 0
+[00:00:40.076] Server  LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:00:40.809] Server  ERROR   (node:6820) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[00:00:40.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:40.997] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:40.997] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:40.997] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:00:40.997] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:00:40.997] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:40.997] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:40.997] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:00:40.997] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:00:45.208] Server  LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:45.209] Server  LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:45.210] Server  LOG     [HomeProductsSection] Groups with products: 0
+[00:00:45.211] Server  LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:00:45.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:46.045] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:46.045] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:46.045] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:00:46.045] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:00:46.045] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:46.045] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:46.045] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:00:46.045] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:00:57.557] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:57.557] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:57.557] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:00:57.557] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:00:57.557] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:00:57.557] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:00:57.557] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:00:57.557] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2591
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2592
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2593
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2141
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2430
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2490
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2527
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2431
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1710
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2501
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2591
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2592
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2593
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2141
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2430
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2490
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2527
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2431
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1710
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2501
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2591
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2592
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2593
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2141
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2430
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2490
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2527
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2431
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1710
+[00:01:28.003] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2501
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2591
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2592
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2593
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2141
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2430
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2490
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2527
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2431
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1710
+[00:01:34.772] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2501
+[00:02:31.341] Browser ERROR   Failed to add to cart: {}
+[00:02:33.480] Browser ERROR   Failed to add to cart: {}
+[00:05:21.406] Server  LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:05:21.407] Server  LOG     [HomeProductsSection] Groups breakdown: []
+[00:05:21.408] Server  LOG     [HomeProductsSection] Groups with products: 0
+[00:05:21.408] Server  LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:05:21.682] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:21.823] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:05:21.823] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:05:21.823] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:05:21.823] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:05:21.823] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:05:21.823] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:05:21.823] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:05:21.823] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:05:22.014] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:05:22.014] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:05:22.014] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:05:22.014] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:05:22.014] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[00:05:22.014] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[00:05:22.014] Browser LOG     [HomeProductsSection] Groups with products: 0
+[00:05:22.014] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[00:09:28.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:42.128] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:58.400] Browser LOG     [ProductLegacyDetail] Raw images: ["upload/products/CR1220.jpg","upload/products/CR1220_b.jpg","upload/products/CR1220_c.jpg","upload/products/CR1220_d.jpg"]
+[00:09:58.400] Browser LOG     [ProductLegacyDetail] Normalized images: ["https://localhost:7000/upload/products/CR1220.jpg","https://localhost:7000/upload/products/CR1220_b.jpg","https://localhost:7000/upload/products/CR1220_c.jpg","https://localhost:7000/upload/products/CR1220_d.jpg"]
+[00:09:58.400] Browser LOG     [ProductLegacyDetail] Raw images: ["upload/products/CR1220.jpg","upload/products/CR1220_b.jpg","upload/products/CR1220_c.jpg","upload/products/CR1220_d.jpg"]
+[00:09:58.400] Browser LOG     [ProductLegacyDetail] Normalized images: ["https://localhost:7000/upload/products/CR1220.jpg","https://localhost:7000/upload/products/CR1220_b.jpg","https://localhost:7000/upload/products/CR1220_c.jpg","https://localhost:7000/upload/products/CR1220_d.jpg"]
+[00:12:31.419] Browser LOG     [ProductLegacyDetail] Raw images: ["upload/products/ssop28.jpg",null,null,null]
+[00:12:31.419] Browser LOG     [ProductLegacyDetail] Normalized images: ["https://localhost:7000/upload/products/ssop28.jpg"]
+[00:12:31.419] Browser LOG     [ProductLegacyDetail] Raw images: ["upload/products/ssop28.jpg",null,null,null]
+[00:12:31.419] Browser LOG     [ProductLegacyDetail] Normalized images: ["https://localhost:7000/upload/products/ssop28.jpg"]
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2591
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2592
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2593
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2141
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2430
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2490
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2527
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2431
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1710
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2501
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2591
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2592
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2593
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2141
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2430
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2490
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2527
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2431
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1710
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2501
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2591
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2592
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2593
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2141
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2430
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2490
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2527
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2431
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1710
+[00:19:04.670] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 2501
+[00:49:12.615] Browser LOG     [ProductLegacyDetail] Raw images: ["upload/products/ADP-F48-EX-1.jpg",null,null,null]
+[00:49:12.615] Browser LOG     [ProductLegacyDetail] Normalized images: ["https://localhost:7000/upload/products/ADP-F48-EX-1.jpg"]
+[00:49:12.615] Browser LOG     [ProductLegacyDetail] Raw images: ["upload/products/ADP-F48-EX-1.jpg",null,null,null]
+[00:49:12.615] Browser LOG     [ProductLegacyDetail] Normalized images: ["https://localhost:7000/upload/products/ADP-F48-EX-1.jpg"]
+[00:53:54.606] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:51.992] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:18:51.992] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:18:51.992] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:18:51.992] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:18:51.992] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:18:51.992] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:18:51.992] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:18:51.992] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:18:52.262] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:18:52.262] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:18:52.262] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:18:52.262] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:18:52.262] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:18:52.262] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:18:52.262] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:18:52.262] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:42:45.632] Server  LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:42:45.633] Server  LOG     [HomeProductsSection] Groups breakdown: []
+[01:42:45.634] Server  LOG     [HomeProductsSection] Groups with products: 0
+[01:42:45.634] Server  LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:42:45.969] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:42:46.114] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:42:46.114] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:42:46.114] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:42:46.114] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:42:46.114] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:42:46.114] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:42:46.114] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:42:46.114] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:42:46.316] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:42:46.316] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:42:46.316] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:42:46.316] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0
+[01:42:46.316] Browser LOG     [HomeProductsSection] Total groups returned from API: 0
+[01:42:46.316] Browser LOG     [HomeProductsSection] Groups breakdown: []
+[01:42:46.316] Browser LOG     [HomeProductsSection] Groups with products: 0
+[01:42:46.316] Browser LOG     [HomeProductsSection] Groups without products (will be hidden): 0

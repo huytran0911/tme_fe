@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///D:/tme/Tme.vn-v2/app/api/auth/me/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { cookies } from \"next/headers\";\r\nimport type { User } from \"@/types/auth\";\r\n\r\nconst mockUser: User = {\r\n  id: \"u-demo\",\r\n  fullName: \"Nguyen Van A\",\r\n  email: \"info@tme.vn\",\r\n  avatarUrl: null,\r\n};\r\n\r\nexport async function GET() {\r\n  const store = await cookies();\r\n  const auth = store.get(\"mock-auth\")?.value;\r\n  if (!auth) {\r\n    return NextResponse.json({ user: null });\r\n  }\r\n  return NextResponse.json({ user: mockUser });\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AACA;;;AAGA,MAAM,WAAiB;IACrB,IAAI;IACJ,UAAU;IACV,OAAO;IACP,WAAW;AACb;AAEO,eAAe;IACpB,MAAM,QAAQ,MAAM,IAAA,2PAAO;IAC3B,MAAM,OAAO,MAAM,GAAG,CAAC,cAAc;IACrC,IAAI,CAAC,MAAM;QACT,OAAO,+PAAY,CAAC,IAAI,CAAC;YAAE,MAAM;QAAK;IACxC;IACA,OAAO,+PAAY,CAAC,IAAI,CAAC;QAAE,MAAM;IAAS;AAC5C"}}]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///D:/tme/Tme.vn-v2/i18n.ts"],"sourcesContent":["import { getRequestConfig } from \"next-intl/server\";\r\n\r\nexport const locales = [\"vi\", \"en\"] as const;\r\nexport const defaultLocale = \"vi\";\r\n\r\nexport type Locale = (typeof locales)[number];\r\n\r\nexport default getRequestConfig(({ locale }) => ({\r\n  locale: locale ?? defaultLocale,\r\n}));\r\n"],"names":[],"mappings":";;;;;;;;AAAA;;AAEO,MAAM,UAAU;IAAC;IAAM;CAAK;AAC5B,MAAM,gBAAgB;uCAId,IAAA,6XAAgB,EAAC,CAAC,EAAE,MAAM,EAAE,GAAK,CAAC;QAC/C,QAAQ,UAAU;IACpB,CAAC"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///D:/tme/Tme.vn-v2/app/page.tsx"],"sourcesContent":["import { defaultLocale } from \"@/i18n\";\r\nimport { redirect } from \"next/navigation\";\r\n\r\nexport default function RootRedirect() {\r\n  redirect(`/${defaultLocale}`);\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AACA;AAAA;;;AAEe,SAAS;IACtB,IAAA,gTAAQ,EAAC,CAAC,CAAC,EAAE,qHAAa,EAAE;AAC9B"}}]
+}
