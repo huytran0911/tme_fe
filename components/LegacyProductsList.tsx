@@ -10,6 +10,7 @@ import ViewModeToggle, { type ViewMode } from "@/components/ViewModeToggle";
 import ProductFilter, { PRODUCT_FILTER_INITIAL_STATE, type ProductFilterState } from "@/components/ProductFilter";
 import SortBar from "@/components/SortBar";
 import { useLegacyProducts } from "@/hooks/useProductLegacy";
+import { useNewProducts } from "@/hooks/useNewProducts";
 import { useProductFilterV2 } from "@/components/layout/ProductFilterV2Context";
 import type { LegacyProductListItem, LegacyProductsParams } from "@/lib/api/product-legacy";
 import type { ProductByCategoryDto } from "@/lib/api/productsByCategory";
@@ -22,6 +23,10 @@ interface LegacyProductsListProps {
   showInlineFilter?: boolean;
   /** Use filters from sidebar context (default: true) */
   useSidebarFilter?: boolean;
+  /** Data source: 'legacy' uses legacy products API, 'newProducts' uses new products API */
+  dataSource?: "legacy" | "newProducts";
+  /** Page size override */
+  pageSizeOverride?: number;
 }
 
 // LocalStorage key for persisting view mode preference
@@ -34,7 +39,10 @@ export default function LegacyProductsList({
   onFilterChange: externalOnFilterChange,
   showInlineFilter,
   useSidebarFilter = true,
+  dataSource = "legacy",
+  pageSizeOverride,
 }: LegacyProductsListProps) {
+  const isNewProductsMode = dataSource === "newProducts";
   const locale = useLocale();
   const router = useRouter();
   const t = useTranslations("Products");
@@ -43,7 +51,7 @@ export default function LegacyProductsList({
   const [internalFilters, setInternalFilters] = useState<ProductFilterState>(PRODUCT_FILTER_INITIAL_STATE);
   const [page, setPage] = useState(1);
   const [accumulatedItems, setAccumulatedItems] = useState<LegacyProductListItem[]>([]);
-  const pageSize = 10;
+  const pageSize = pageSizeOverride ?? 10;
 
   // Get filters from context (sidebar filter V2 - uses arrays)
   const contextFilterV2 = useProductFilterV2();
@@ -134,29 +142,70 @@ export default function LegacyProductsList({
     };
   }, [categoryId, keyword, filters, page, pageSize, useSidebarFilter, contextFilterV2.filters]);
 
-  const {
-    data,
-    isLoading,
-    isFetching,
-    isError,
-    error,
-    refetch,
-  } = useLegacyProducts(apiParams, !!(categoryId || keyword));
+  // --- Legacy data source ---
+  const legacyQuery = useLegacyProducts(apiParams, !isNewProductsMode && !!(categoryId || keyword));
 
-  // Accumulate items when new data arrives
+  // --- New products data source ---
+  const newProductsQuery = useNewProducts(
+    { page, pageSize },
+  );
+
+  // Unify data from both sources
+  const data = isNewProductsMode ? undefined : legacyQuery.data;
+  const newData = isNewProductsMode ? newProductsQuery.data : undefined;
+  const isLoading = isNewProductsMode ? newProductsQuery.isLoading : legacyQuery.isLoading;
+  const isFetching = isNewProductsMode ? newProductsQuery.isLoading : legacyQuery.isFetching;
+  const isError = isNewProductsMode ? newProductsQuery.isError : legacyQuery.isError;
+  const error = isNewProductsMode ? newProductsQuery.error : legacyQuery.error;
+  const refetch = isNewProductsMode ? newProductsQuery.refetch : legacyQuery.refetch;
+
+  // Accumulate items when new data arrives (legacy)
   useEffect(() => {
-    if (data?.items) {
+    if (!isNewProductsMode && data?.items) {
       if (page === 1) {
         setAccumulatedItems(data.items);
       } else {
         setAccumulatedItems((prev) => [...prev, ...data.items]);
       }
     }
-  }, [data, page]);
+  }, [data, page, isNewProductsMode]);
 
-  const items = accumulatedItems;
-  const totalCount = data?.totalCount ?? 0;
-  const hasMore = items.length < totalCount;
+  // Accumulate items when new data arrives (new products)
+  const [accumulatedNewItems, setAccumulatedNewItems] = useState<ProductByCategoryDto[]>([]);
+  useEffect(() => {
+    if (isNewProductsMode && newData?.items) {
+      const mapped = newData.items.map((item: any): ProductByCategoryDto => ({
+        id: item.id,
+        code: item.code,
+        name: item.name,
+        nameEn: item.nameEn,
+        price: item.price,
+        maxPrice: null,
+        originalPrice: item.originalPrice,
+        activeSaleOff: null,
+        finalPrice: null,
+        saleOff: item.saleOff,
+        imageUrl: item.imageUrl,
+        categoryId: item.categoryId,
+        categoryName: item.categoryName,
+        isNew: item.isNew,
+        isActive: item.isActive,
+        quantity: item.quantity ?? item.quantityRemaining ?? 0,
+        dateAdded: item.dateAdded,
+      }));
+      if (page === 1) {
+        setAccumulatedNewItems(mapped);
+      } else {
+        setAccumulatedNewItems((prev) => [...prev, ...mapped]);
+      }
+    }
+  }, [newData, page, isNewProductsMode]);
+
+  const items = isNewProductsMode ? [] as LegacyProductListItem[] : accumulatedItems;
+  const newItems = isNewProductsMode ? accumulatedNewItems : [];
+  const totalCount = isNewProductsMode ? (newData?.totalCount ?? 0) : (data?.totalCount ?? 0);
+  const displayedCount = isNewProductsMode ? newItems.length : items.length;
+  const hasMore = displayedCount < totalCount;
 
   // Load more handler
   const handleLoadMore = () => {
@@ -247,7 +296,7 @@ export default function LegacyProductsList({
   return (
     <div className="space-y-4">
       {/* Filter - inline variant for mobile, shows above products (only when not externally controlled) */}
-      {shouldShowInlineFilter && (
+      {!isNewProductsMode && shouldShowInlineFilter && (
         <div className="lg:hidden">
           <ProductFilter
             variant="inline"
@@ -260,11 +309,13 @@ export default function LegacyProductsList({
 
       {/* Sort Bar - Shopee Style */}
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-100 bg-white px-3 py-2 shadow-sm">
-        <SortBar
-          sortBy={contextFilterV2.filters.sortBy}
-          sortDir={contextFilterV2.filters.sortDir}
-          onSortChange={contextFilterV2.setSort}
-        />
+        {!isNewProductsMode ? (
+          <SortBar
+            sortBy={contextFilterV2.filters.sortBy}
+            sortDir={contextFilterV2.filters.sortDir}
+            onSortChange={contextFilterV2.setSort}
+          />
+        ) : <div />}
         <div className="flex items-center gap-3">
           {isFetching && !isLoading && (
             <svg className="h-4 w-4 animate-spin text-orange-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -273,7 +324,7 @@ export default function LegacyProductsList({
             </svg>
           )}
           <span className="text-sm text-slate-600">
-            <span className="font-semibold text-slate-800">{items.length}</span>/<span className="font-semibold text-slate-800">{totalCount}</span> {t("products")}
+            <span className="font-semibold text-slate-800">{displayedCount}</span>/<span className="font-semibold text-slate-800">{totalCount}</span> {t("products")}
           </span>
           <ViewModeToggle value={viewMode} onChange={handleViewModeChange} />
         </div>
@@ -295,54 +346,24 @@ export default function LegacyProductsList({
             {tCommon("retry")}
           </button>
         </div>
-      ) : items.length === 0 ? (
+      ) : displayedCount === 0 ? (
         <div className="rounded-xl border border-slate-200 bg-white px-4 py-6 text-sm text-slate-600 shadow-sm">
           {t("empty")}
         </div>
       ) : (
         <>
           <div className={getGridClasses()}>
-            {items.map((product) => {
-              const displayName = (locale === "vi" ? product.name : product.nameEn || product.name) || "";
-              const adapted = adaptProduct(product);
-
-              if (viewMode === "list") {
-                return (
-                  <ProductCardList
-                    key={product.id}
-                    product={adapted}
-                    displayName={displayName}
-                    onAddToCart={(p) => handleAddToCart(product)}
-                    onBuyNow={(p) => handleBuyNow(product)}
-                    onClick={() => handleProductClick(product)}
-                  />
-                );
-              }
-
-              if (viewMode === "compact") {
-                return (
-                  <ProductCardCompact
-                    key={product.id}
-                    product={adapted}
-                    displayName={displayName}
-                    onAddToCart={() => handleAddToCart(product, 1)}
-                    onClick={() => handleProductClick(product)}
-                  />
-                );
-              }
-
-              // Default: grid view
-              return (
-                <ProductCard
-                  key={product.id}
-                  product={adapted}
-                  displayName={displayName}
-                  onAddToCart={(p) => handleAddToCart(product)}
-                  onBuyNow={(p) => handleBuyNow(product)}
-                  onClick={() => handleProductClick(product)}
-                />
-              );
-            })}
+            {isNewProductsMode
+              ? newItems.map((product) => {
+                  const displayName = (locale === "vi" ? product.name : product.nameEn || product.name) || "";
+                  return renderProductCard(product, displayName, viewMode, () => router.push(`/${locale}/products/${product.id}`));
+                })
+              : items.map((product) => {
+                  const displayName = (locale === "vi" ? product.name : product.nameEn || product.name) || "";
+                  const adapted = adaptProduct(product);
+                  return renderProductCard(adapted, displayName, viewMode, () => handleProductClick(product));
+                })
+            }
           </div>
 
           {/* Load More */}
@@ -361,6 +382,42 @@ export default function LegacyProductsList({
       )}
     </div>
   );
+
+  function renderProductCard(product: ProductByCategoryDto, displayName: string, mode: ViewMode, onClick: () => void) {
+    if (mode === "list") {
+      return (
+        <ProductCardList
+          key={product.id}
+          product={product}
+          displayName={displayName}
+          onAddToCart={() => {}}
+          onBuyNow={() => {}}
+          onClick={onClick}
+        />
+      );
+    }
+    if (mode === "compact") {
+      return (
+        <ProductCardCompact
+          key={product.id}
+          product={product}
+          displayName={displayName}
+          onAddToCart={() => {}}
+          onClick={onClick}
+        />
+      );
+    }
+    return (
+      <ProductCard
+        key={product.id}
+        product={product}
+        displayName={displayName}
+        onAddToCart={() => {}}
+        onBuyNow={() => {}}
+        onClick={onClick}
+      />
+    );
+  }
 }
 
 // Skeleton loading component for product cards

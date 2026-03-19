@@ -410,6 +410,12 @@ export default function CartDrawer() {
                     <span>-{formatPrice(summary.bundleDiscount)} đ</span>
                   </div>
                 )}
+                {summary.promotionDiscount > 0 && (
+                  <div className="flex justify-between text-green-600">
+                    <span>{t("promotionDiscount")}</span>
+                    <span>-{formatPrice(summary.promotionDiscount)} đ</span>
+                  </div>
+                )}
                 <div className="flex justify-between border-t border-slate-200 pt-2 text-base font-semibold text-slate-900">
                   <span>{t("total")}</span>
                   <span className="text-primary">{formatPrice(grandTotal)} đ</span>

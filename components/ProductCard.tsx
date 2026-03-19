@@ -173,7 +173,7 @@ export default function ProductCard({
               {hasStock ? t("available", { count: product.quantity }) : t("outOfStock")}
             </span>
 
-            <div className="inline-flex items-center rounded-xl border border-slate-200 bg-slate-50 px-0.5">
+            <div className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50">
               <button
                 type="button"
                 onClick={(e) => {
@@ -181,7 +181,7 @@ export default function ProductCard({
                   changeQuantity(-1);
                 }}
                 disabled={!hasStock || buyQuantity <= 1}
-                className="flex h-8 w-8 items-center justify-center rounded-l-xl text-sm text-slate-700 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+                className="flex h-6 w-6 items-center justify-center rounded-l-lg text-xs text-slate-700 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 -
               </button>
@@ -202,7 +202,7 @@ export default function ProductCard({
                   }
                 }}
                 disabled={!hasStock}
-                className="h-8 w-10 border-0 bg-transparent text-center text-xs font-semibold text-slate-800 outline-none focus:ring-0 disabled:opacity-40 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                className="h-6 w-8 border-0 bg-transparent text-center text-[11px] font-semibold text-slate-800 outline-none focus:ring-0 disabled:opacity-40 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               />
               <button
                 type="button"
@@ -211,7 +211,7 @@ export default function ProductCard({
                   changeQuantity(1);
                 }}
                 disabled={!hasStock || (maxQty > 0 && buyQuantity >= maxQty)}
-                className="flex h-8 w-8 items-center justify-center rounded-r-xl text-sm text-slate-700 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
+                className="flex h-6 w-6 items-center justify-center rounded-r-lg text-xs text-slate-700 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 +
               </button>

@@ -27,8 +27,9 @@ function OrderStatusTimeline({
     { key: "NEW", label: t("status.new") },
     { key: "CONFIRMED", label: t("status.confirmed") },
     { key: "PROCESSING", label: t("status.processing") },
-    { key: "SHIPPING", label: t("status.shipping") },
+    { key: "SHIPPED", label: t("status.shipped") },
     { key: "DELIVERED", label: t("status.delivered") },
+    { key: "COMPLETED", label: t("status.completed") },
   ];
 
   const currentIndex = statuses.findIndex((s) => s.key === status);
@@ -50,49 +51,65 @@ function OrderStatusTimeline({
   }
 
   return (
-    <div className="relative py-4">
-      <div className="flex justify-between">
+    <div className="py-4">
+      <div className="flex items-start">
         {statuses.map((s, index) => {
           const isCompleted = index <= currentIndex;
           const isCurrent = index === currentIndex;
+          const isLineCompleted = index < currentIndex;
 
           return (
-            <div key={s.key} className="flex flex-col items-center flex-1">
-              {/* Circle */}
-              <div
-                className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 transition-colors ${
-                  isCompleted
-                    ? "border-green-500 bg-green-500 text-white"
-                    : "border-slate-300 bg-white text-slate-400"
-                } ${isCurrent ? "ring-4 ring-green-100" : ""}`}
-              >
-                {isCompleted ? (
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+            <div key={s.key} className="flex flex-1 flex-col items-center">
+              {/* Circle row with connectors */}
+              <div className="flex w-full items-center">
+                {/* Left connector */}
+                {index > 0 ? (
+                  <div
+                    className={`h-0.5 flex-1 ${
+                      isCompleted ? "bg-green-500" : "bg-slate-200"
+                    }`}
+                  />
                 ) : (
-                  <span className="text-xs font-medium">{index + 1}</span>
+                  <div className="flex-1" />
+                )}
+
+                {/* Circle */}
+                <div
+                  className={`relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
+                    isCompleted
+                      ? "border-green-500 bg-green-500 text-white"
+                      : "border-slate-300 bg-white text-slate-400"
+                  } ${isCurrent ? "ring-4 ring-green-100" : ""}`}
+                >
+                  {isCompleted ? (
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  ) : (
+                    <span className="text-xs font-medium">{index + 1}</span>
+                  )}
+                </div>
+
+                {/* Right connector */}
+                {index < statuses.length - 1 ? (
+                  <div
+                    className={`h-0.5 flex-1 ${
+                      isLineCompleted ? "bg-green-500" : "bg-slate-200"
+                    }`}
+                  />
+                ) : (
+                  <div className="flex-1" />
                 )}
               </div>
 
               {/* Label */}
               <span
-                className={`mt-2 text-xs text-center ${
+                className={`mt-2 text-[11px] leading-tight text-center px-1 ${
                   isCompleted ? "font-medium text-green-700" : "text-slate-500"
                 }`}
               >
                 {s.label}
               </span>
-
-              {/* Connector line */}
-              {index < statuses.length - 1 && (
-                <div
-                  className={`absolute top-4 left-1/2 h-0.5 w-full -translate-y-1/2 ${
-                    index < currentIndex ? "bg-green-500" : "bg-slate-200"
-                  }`}
-                  style={{ left: `${(index + 0.5) * (100 / statuses.length)}%`, width: `${100 / statuses.length}%` }}
-                />
-              )}
             </div>
           );
         })}
@@ -344,17 +361,97 @@ function OrderTrackingContent() {
                 </div>
               </div>
 
-              {/* Total */}
+              {/* Shipping Info */}
+              {order.shipping && (order.shipping.trackingNumber || order.shipping.carrier) && (
+                <div className="p-4 border-b border-slate-200">
+                  <h3 className="text-sm font-semibold text-slate-900 mb-3">
+                    {t("shippingInfo")}
+                  </h3>
+                  <div className="grid gap-2 text-sm sm:grid-cols-2">
+                    {order.shipping.carrier && (
+                      <div>
+                        <span className="text-slate-500">{t("carrier")}</span>
+                        <span className="ml-2 font-medium">{order.shipping.carrier}</span>
+                      </div>
+                    )}
+                    {order.shipping.trackingNumber && (
+                      <div>
+                        <span className="text-slate-500">{t("trackingNumber")}</span>
+                        <span className="ml-2 font-medium font-mono">{order.shipping.trackingNumber}</span>
+                      </div>
+                    )}
+                    {order.shipping.expectedDeliveryDate && (
+                      <div>
+                        <span className="text-slate-500">{t("expectedDelivery")}</span>
+                        <span className="ml-2 font-medium">
+                          {formatDate(order.shipping.expectedDeliveryDate, "dd/MM/yyyy")}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Price Breakdown */}
               <div className="p-4 bg-slate-50">
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-slate-900">
-                    {t("total")}
-                  </span>
-                  <span className="text-xl font-bold text-primary">
-                    {formatOrderAmount(order.totalAmount || 0, locale)}
-                  </span>
+                <div className="space-y-2 text-sm">
+                  {order.priceBreakdown ? (
+                    <>
+                      <div className="flex justify-between">
+                        <span className="text-slate-600">{t("subtotal")}</span>
+                        <span>{formatOrderAmount(order.priceBreakdown.subtotal, locale)}</span>
+                      </div>
+                      {order.priceBreakdown.saleOffDiscount > 0 && (
+                        <div className="flex justify-between text-green-600">
+                          <span>{t("saleOffDiscount")}</span>
+                          <span>-{formatOrderAmount(order.priceBreakdown.saleOffDiscount, locale)}</span>
+                        </div>
+                      )}
+                      {order.priceBreakdown.bundleDiscount > 0 && (
+                        <div className="flex justify-between text-green-600">
+                          <span>{t("bundleDiscount")}</span>
+                          <span>-{formatOrderAmount(order.priceBreakdown.bundleDiscount, locale)}</span>
+                        </div>
+                      )}
+                      {order.priceBreakdown.couponDiscount > 0 && (
+                        <div className="flex justify-between text-green-600">
+                          <span>{t("couponDiscount")}</span>
+                          <span>-{formatOrderAmount(order.priceBreakdown.couponDiscount, locale)}</span>
+                        </div>
+                      )}
+                      {order.priceBreakdown.shippingFee > 0 && (
+                        <div className="flex justify-between">
+                          <span className="text-slate-600">{t("shippingFee")}</span>
+                          <span>+{formatOrderAmount(order.priceBreakdown.shippingFee, locale)}</span>
+                        </div>
+                      )}
+                      <div className="flex justify-between pt-2 border-t border-slate-200">
+                        <span className="font-semibold text-slate-900">{t("total")}</span>
+                        <span className="text-xl font-bold text-primary">
+                          {formatOrderAmount(order.priceBreakdown.finalAmount, locale)}
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-slate-900">{t("total")}</span>
+                      <span className="text-xl font-bold text-primary">
+                        {formatOrderAmount(order.totalAmount || 0, locale)}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
+
+              {/* Cancel Reason */}
+              {order.status === "CANCELLED" && order.cancelReason && (
+                <div className="p-4 border-t border-slate-200 bg-red-50">
+                  <h3 className="text-sm font-semibold text-red-700 mb-2">
+                    {t("cancelReason")}
+                  </h3>
+                  <p className="text-sm text-red-600">{order.cancelReason}</p>
+                </div>
+              )}
 
               {/* Cancel Button */}
               {canCancelOrder(order.status) && (

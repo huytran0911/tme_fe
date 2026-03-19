@@ -10,6 +10,9 @@ export interface CustomerInfo {
   phone?: string;
   email?: string;
   address?: string;
+  provinceId?: number;
+  districtId?: number;
+  wardId?: number;
 }
 
 export interface BundleItemRequest {
@@ -23,13 +26,24 @@ export interface OrderItemRequest {
   bundleItems?: BundleItemRequest[] | null;
 }
 
+export type PaymentMethod = "COD" | "VNPAY" | "CASH" | "TRANSFER";
+export type OrderChannel = "ONLINE" | "POS";
+
 export interface CreateOrderRequest {
   customer: CustomerInfo;
   items: OrderItemRequest[];
+  paymentMethod?: PaymentMethod;
+  channel?: OrderChannel;
+  couponCode?: string;
+  shippingMethod?: string;
+  shippingFee?: number;
+  userId?: number;
+  note?: string;
 }
 
 export interface OrderPreviewRequest {
   items: OrderItemRequest[];
+  couponCode?: string;
 }
 
 export interface CancelOrderRequest {
@@ -51,11 +65,15 @@ export interface VariantOptionInfo {
 export interface CreatedOrderItemResponse {
   variantId: number;
   sku: string | null;
+  productName: string | null;
+  variantName: string | null;
+  originalPrice: number;
   quantity: number;
   unitPrice: number;
   lineTotal: number;
   appliedTierMinQty: number;
   itemType: "MAIN" | "BUNDLE" | string;
+  saleOffDiscount: number;
   bundleDiscount: number;
   bundleItems: CreatedOrderItemResponse[] | null;
 }
@@ -63,7 +81,16 @@ export interface CreatedOrderItemResponse {
 export interface CreateOrderResponse {
   id: number;
   orderCode: string;
+  subtotal: number;
+  saleOffDiscount: number;
+  bundleDiscount: number;
+  couponDiscount: number;
+  promotionDiscount: number;
+  shippingFee: number;
+  finalAmount: number;
   totalAmount: number;
+  couponCode: string | null;
+  appliedPromotion: string | null;
   items: CreatedOrderItemResponse[] | null;
 }
 
@@ -72,22 +99,38 @@ export interface OrderPreviewItemResponse {
   productId: number;
   sku: string | null;
   productName: string | null;
+  variantName: string | null;
   productImage: string | null;
+  originalPrice: number;
   quantity: number;
   stock: number;
   unitPrice: number;
   lineTotal: number;
   appliedTierMinQty: number;
   itemType: "MAIN" | "BUNDLE" | string;
+  saleOffDiscount: number;
   bundleDiscount: number;
   bundleItems: OrderPreviewItemResponse[] | null;
+}
+
+export interface GiftItem {
+  variantId: number;
+  productName: string | null;
+  quantity: number;
+  value: number;
 }
 
 export interface OrderPreviewResponse {
   items: OrderPreviewItemResponse[] | null;
   subTotal: number;
+  saleOffDiscount: number;
+  bundleDiscount: number;
+  promotionDiscount: number;
   totalDiscount: number;
   totalAmount: number;
+  appliedPromotion: string | null;
+  gifts: GiftItem[] | null;
+  giftValue: number;
   warnings: string[] | null;
 }
 
@@ -95,15 +138,38 @@ export interface SalesOrderItemResponse {
   id: number;
   variantId: number;
   productName: string | null;
+  variantName: string | null;
   sku: string | null;
+  originalPrice: number;
   quantity: number;
   unitPrice: number;
   lineTotal: number;
   itemType: "MAIN" | "BUNDLE" | string;
   parentItemId: number | null;
+  saleOffDiscount: number;
   bundleDiscount: number;
+  note: string | null;
   options: VariantOptionInfo[] | null;
   bundleItems: SalesOrderItemResponse[] | null;
+}
+
+export interface ShippingInfo {
+  method: string | null;
+  fee: number;
+  trackingNumber: string | null;
+  carrier: string | null;
+  expectedDeliveryDate: string | null;
+  actualDeliveryDate: string | null;
+}
+
+export interface PriceBreakdown {
+  subtotal: number;
+  saleOffDiscount: number;
+  bundleDiscount: number;
+  couponDiscount: number;
+  promotionDiscount: number;
+  shippingFee: number;
+  finalAmount: number;
 }
 
 export interface SalesOrderDetailResponse {
@@ -113,9 +179,22 @@ export interface SalesOrderDetailResponse {
   customerPhone: string | null;
   customerEmail: string | null;
   customerAddress: string | null;
+  provinceId: number | null;
+  districtId: number | null;
+  wardId: number | null;
+  userId: number | null;
+  channel: OrderChannel | null;
+  paymentMethod: PaymentMethod | null;
+  paymentStatus: string | null;
+  paidAmount: number;
+  couponCode: string | null;
+  appliedPromotion: string | null;
+  priceBreakdown: PriceBreakdown;
+  shipping: ShippingInfo;
   totalAmount: number | null;
   status: OrderStatus;
   note: string | null;
+  cancelReason: string | null;
   createdAt: string;
   createdBy: string | null;
   updatedAt: string | null;
@@ -127,7 +206,13 @@ export interface MyOrderListItem {
   id: number;
   orderCode: string;
   status: OrderStatus;
+  subtotal: number;
+  finalAmount: number;
   totalAmount: number;
+  paymentStatus: string | null;
+  channel: OrderChannel | null;
+  carrier: string | null;
+  trackingNumber: string | null;
   createdAt: string;
 }
 
@@ -152,16 +237,18 @@ export type OrderStatus =
   | "NEW"
   | "CONFIRMED"
   | "PROCESSING"
-  | "SHIPPING"
+  | "SHIPPED"
   | "DELIVERED"
+  | "COMPLETED"
   | "CANCELLED";
 
 export const OrderStatusLabels: Record<OrderStatus, { vi: string; en: string }> = {
   NEW: { vi: "Đơn hàng mới", en: "New Order" },
   CONFIRMED: { vi: "Đã xác nhận", en: "Confirmed" },
-  PROCESSING: { vi: "Đang xử lý", en: "Processing" },
-  SHIPPING: { vi: "Đang giao hàng", en: "Shipping" },
-  DELIVERED: { vi: "Đã giao hàng", en: "Delivered" },
+  PROCESSING: { vi: "Đang đóng gói", en: "Processing" },
+  SHIPPED: { vi: "Đã giao vận chuyển", en: "Shipped" },
+  DELIVERED: { vi: "Đã nhận hàng", en: "Delivered" },
+  COMPLETED: { vi: "Hoàn thành", en: "Completed" },
   CANCELLED: { vi: "Đã hủy", en: "Cancelled" },
 };
 
@@ -170,7 +257,8 @@ export function getOrderStatusLabel(status: OrderStatus, locale: string = "vi"):
 }
 
 export function canCancelOrder(status: OrderStatus): boolean {
-  return status === "NEW";
+  // Can cancel at any step except COMPLETED and CANCELLED
+  return status !== "COMPLETED" && status !== "CANCELLED";
 }
 
 // ============================================
@@ -238,7 +326,7 @@ export async function createOrder(request: CreateOrderRequest): Promise<CreateOr
     }
   }
 
-  const response = await apiPost<CreateOrderResponse>(
+  const envelope = await apiPost<ApiEnvelope<CreateOrderResponse>>(
     ORDER_API_URL,
     request,
     {
@@ -246,7 +334,11 @@ export async function createOrder(request: CreateOrderRequest): Promise<CreateOr
     }
   );
 
-  return response;
+  if (!envelope.success || !envelope.data) {
+    throw new Error(envelope.error?.message || "Không thể tạo đơn hàng.");
+  }
+
+  return envelope.data;
 }
 
 /**
@@ -295,9 +387,13 @@ export async function trackOrder(
     params.toString() ? `?${params.toString()}` : ""
   }`;
 
-  const response = await apiGet<SalesOrderDetailResponse>(url);
+  const envelope = await apiGet<ApiEnvelope<SalesOrderDetailResponse>>(url);
 
-  return response;
+  if (!envelope.success || !envelope.data) {
+    throw new Error(envelope.error?.message || "Không tìm thấy đơn hàng.");
+  }
+
+  return envelope.data;
 }
 
 /**

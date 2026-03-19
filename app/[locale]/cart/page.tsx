@@ -97,7 +97,10 @@ export default function CartPage() {
   }, [items, selectedIds, gifts]);
 
   // Promotions based on SELECTED items total only — hides when nothing is selected
-  const { appliedPromotions, nearbyPromotions } = usePromotions(selectedSummary.grandTotal);
+  const { appliedPromotions, nearbyPromotions, bestDiscount, hasFreeShipping } = usePromotions(selectedSummary.grandTotal);
+
+  // Final grand total after promotion discount
+  const finalGrandTotal = Math.max(selectedSummary.grandTotal - bestDiscount, 0);
 
 
   const isMutating = isUpdatingItem || isRemovingItem || isClearingCart;
@@ -562,17 +565,24 @@ export default function CartPage() {
                       </div>
                     )}
 
+                    {bestDiscount > 0 && (
+                      <div className="flex justify-between text-green-600">
+                        <span>{t("promotionDiscount")}</span>
+                        <span>-{formatPrice(bestDiscount)} đ</span>
+                      </div>
+                    )}
+
                     <div className="border-t border-slate-200 pt-3">
                       <div className="flex justify-between text-base font-semibold text-slate-900">
                         <span>{t("total")}</span>
                         <span className="text-xl text-primary">
-                          {formatPrice(selectedSummary.grandTotal)} đ
+                          {formatPrice(finalGrandTotal)} đ
                         </span>
                       </div>
                       {/* Promotion hint */}
-                      {appliedPromotions.length > 0 && (
+                      {hasFreeShipping && (
                         <p className="mt-1 text-xs text-green-600">
-                          {t("promotions.checkoutHint")}
+                          🚚 {t("promotions.freeShippingApplied")}
                         </p>
                       )}
                       <p className="mt-0.5 text-xs text-slate-500">

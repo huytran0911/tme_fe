@@ -311,6 +311,7 @@
     "subtotalLabel": "Thành tiền:",
     "stockWarning": "Chỉ còn {count} sản phẩm",
     "giftValue": "Quà tặng",
+    "promotionDiscount": "Giảm khuyến mãi",
     "shippingNote": "Chưa bao gồm phí vận chuyển",
     "gifts": {
       "title": "🎁 Quà tặng kèm",
@@ -326,6 +327,7 @@
       "discount": "Giảm {amount}đ",
       "discountPercent": "Giảm {percent}%",
       "freeShipping": "Miễn phí vận chuyển",
+      "freeShippingApplied": "Miễn phí vận chuyển đã được áp dụng",
       "buyMore": "Mua thêm {amount}đ để được {benefit}",
       "bestDiscount": "Khuyến mãi",
       "minOrder": "Đơn tối thiểu {amount}đ",
@@ -502,10 +504,22 @@
     "status": {
       "new": "Đơn hàng mới",
       "confirmed": "Đã xác nhận",
-      "processing": "Đang xử lý",
-      "shipping": "Đang giao",
-      "delivered": "Đã giao"
-    }
+      "processing": "Đang đóng gói",
+      "shipped": "Đã giao vận chuyển",
+      "delivered": "Đã nhận hàng",
+      "completed": "Hoàn thành"
+    },
+    "cancelReason": "Lý do hủy",
+    "shippingInfo": "Thông tin vận chuyển",
+    "trackingNumber": "Mã vận đơn",
+    "carrier": "Đơn vị vận chuyển",
+    "expectedDelivery": "Ngày giao dự kiến",
+    "subtotal": "Tạm tính",
+    "saleOffDiscount": "Giảm giá sản phẩm",
+    "bundleDiscount": "Giảm giá combo",
+    "couponDiscount": "Giảm giá voucher",
+    "shippingFee": "Phí vận chuyển",
+    "finalAmount": "Thành tiền"
   },
   "OrderSuccess": {
     "breadcrumb": "Đặt hàng thành công",
@@ -630,6 +644,40 @@
       "addresses": "Sổ địa chỉ"
     }
   },
+  "AccountOrders": {
+    "breadcrumb": "Đơn hàng",
+    "accountBreadcrumb": "Tài khoản",
+    "title": "Đơn hàng của tôi",
+    "orderCount": "đơn hàng",
+    "empty": "Bạn chưa có đơn hàng nào",
+    "emptyHint": "Hãy mua sắm và quay lại đây nhé!",
+    "continueShopping": "Tiếp tục mua sắm",
+    "viewDetail": "Chi tiết",
+    "cancelOrder": "Hủy đơn",
+    "cancelSuccess": "Đã hủy đơn hàng thành công!",
+    "cancelError": "Không thể hủy đơn hàng. Vui lòng thử lại.",
+    "tabs": {
+      "all": "Tất cả",
+      "new": "Mới",
+      "confirmed": "Đã xác nhận",
+      "processing": "Đang đóng gói",
+      "shipped": "Đang giao",
+      "delivered": "Đã nhận hàng",
+      "completed": "Hoàn thành",
+      "cancelled": "Đã hủy"
+    },
+    "cancelConfirm": {
+      "title": "Hủy đơn hàng?",
+      "message": "Bạn có chắc muốn hủy đơn hàng {orderCode}? Hành động này không thể hoàn tác."
+    },
+    "reorder": "Mua lại",
+    "reorderLoading": "Đang thêm...",
+    "reorderSuccess": "Đã thêm {count} sản phẩm vào giỏ hàng!",
+    "reorderPartial": "Đã thêm {count}/{total} sản phẩm (một số sản phẩm đã hết hàng)",
+    "reorderFailed": "Không thể thêm sản phẩm vào giỏ hàng.",
+    "reorderEmpty": "Đơn hàng không có sản phẩm để mua lại.",
+    "reorderError": "Có lỗi xảy ra. Vui lòng thử lại."
+  },
   "AccountProfile": {
     "breadcrumb": "Tài khoản",
     "title": "Thông tin tài khoản",
@@ -748,5 +796,12 @@
     "inactive": "Ngừng kinh doanh",
     "removeFromList": "Xoá khỏi danh sách",
     "total": "{count} sản phẩm"
+  },
+  "NewProductsPage": {
+    "breadcrumb": "Sản phẩm mới",
+    "title": "Sản phẩm mới",
+    "subtitle": "Các sản phẩm mới nhất tại TME",
+    "empty": "Chưa có sản phẩm mới.",
+    "loadError": "Không tải được danh sách sản phẩm mới."
   }
 }

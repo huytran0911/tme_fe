@@ -83,13 +83,26 @@ export interface CartGiftResponse {
   giftStock: number;
 }
 
+export interface CartPromotionApplied {
+  id: number;
+  name: string;
+  nameEn: string;
+  saleOff: number;
+  isPercent: boolean;
+  freeTransportFee: boolean;
+  applyForTotal: number;
+  discountAmount: number;
+}
+
 export interface CartSummary {
   itemCount: number;
   totalQuantity: number;
   subtotal: number;
-  saleOffDiscount: number; // Total discount from activeSaleOff (tổng giảm giá)
+  saleOffDiscount: number;
   bundleDiscount: number;
   giftValue: number;
+  promotionDiscount: number;
+  appliedPromotion: CartPromotionApplied | null;
   grandTotal: number;
 }
 

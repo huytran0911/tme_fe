@@ -16,6 +16,13 @@ import {
   type MyOrdersResponse,
   type CancelOrderResponse,
   type OrderStatus,
+  type PaymentMethod,
+  type OrderChannel,
+  type CustomerInfo,
+  type PriceBreakdown,
+  type ShippingInfo,
+  type SalesOrderItemResponse,
+  type MyOrderListItem,
 } from "@/lib/api/orders";
 
 // ============================================
@@ -28,8 +35,8 @@ const ORDER_QUERY_KEYS = {
     [...ORDER_QUERY_KEYS.all, "my-orders", { page, pageSize, status }] as const,
   tracking: (orderCode: string, phone?: string) =>
     [...ORDER_QUERY_KEYS.all, "tracking", orderCode, phone] as const,
-  preview: (items: OrderPreviewRequest["items"]) =>
-    [...ORDER_QUERY_KEYS.all, "preview", JSON.stringify(items)] as const,
+  preview: (items: OrderPreviewRequest["items"], couponCode?: string) =>
+    [...ORDER_QUERY_KEYS.all, "preview", JSON.stringify(items), couponCode] as const,
 };
 
 // ============================================
@@ -238,7 +245,14 @@ export type {
   MyOrdersResponse,
   CancelOrderResponse,
   OrderStatus,
-};
+  PaymentMethod,
+  OrderChannel,
+  CustomerInfo,
+  PriceBreakdown,
+  ShippingInfo,
+  SalesOrderItemResponse,
+  MyOrderListItem,
+} from "@/lib/api/orders";
 
 export {
   OrderStatusLabels,

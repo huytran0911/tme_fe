@@ -136,10 +136,10 @@ export default function CheckoutPage() {
   const tCart = useTranslations("Cart");
   const router = useRouter();
   const { isAuthenticated, isLoading: authLoading } = useAuth();
-  const { items: allItems, gifts, summary, isLoading: cartLoading, isEmpty, validateCart, grandTotal } = useCart();
+  const { items: allItems, gifts, summary, isLoading: cartLoading, isEmpty, validateCart, grandTotal, clearCart } = useCart();
   const { submitOrder, isLoading: orderLoading, error: orderError } = useCreateOrder();
   const { preview, isLoading: previewLoading, data: previewData } = useOrderPreview();
-  const { appliedPromotions, nearbyPromotions, hasFreeShipping } = usePromotions(grandTotal);
+  const { appliedPromotions, nearbyPromotions, bestDiscount, hasFreeShipping } = usePromotions(grandTotal);
   const { data: addresses, isLoading: addressesLoading, refetch: refetchAddresses } = useAddresses();
   const { data: profile } = useProfile();
   const [showAddAddressModal, setShowAddAddressModal] = useState(false);
@@ -299,6 +299,20 @@ export default function CheckoutPage() {
         customer,
         items: orderItems,
       });
+
+      // Clear cart after successful order (don't block redirect if clear fails)
+      try {
+        await clearCart();
+      } catch {
+        // Cart clear failed — not critical, user can clear manually
+      }
+
+      // Clear selected items from session storage
+      try {
+        sessionStorage.removeItem("tme-selected-cart-items");
+      } catch {
+        // Ignore sessionStorage errors
+      }
 
       // Redirect to success page with order code
       router.push(`/${locale}/order-success?code=${result.orderCode}`);
@@ -763,15 +777,27 @@ export default function CheckoutPage() {
                       </div>
                     )}
 
+                    {bestDiscount > 0 && (
+                      <div className="flex justify-between text-green-600">
+                        <span>{tCart("promotionDiscount")}</span>
+                        <span>-{formatCurrency(bestDiscount)}</span>
+                      </div>
+                    )}
+
                     <div className="pt-3 border-t border-slate-200">
                       <div className="flex justify-between">
                         <span className="font-semibold text-slate-900">
                           {t("total")}
                         </span>
                         <span className="text-lg font-bold text-primary">
-                          {formatCurrency(displayTotal)}
+                          {formatCurrency(Math.max(displayTotal - bestDiscount, 0))}
                         </span>
                       </div>
+                      {hasFreeShipping && (
+                        <p className="mt-1 text-xs text-green-600">
+                          🚚 {tCart("promotions.freeShippingApplied")}
+                        </p>
+                      )}
                     </div>
 
                     {/* Preview warnings */}
@@ -846,7 +872,7 @@ export default function CheckoutPage() {
               <div className="flex items-center gap-3">
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] text-slate-500 uppercase tracking-wider">{t("total")}</p>
-                  <p className="text-lg font-bold text-primary truncate">{formatCurrency(displayTotal)}</p>
+                  <p className="text-lg font-bold text-primary truncate">{formatCurrency(Math.max(displayTotal - bestDiscount, 0))}</p>
                 </div>
                 <button
                   type="button"
@@ -910,9 +936,40 @@ export default function CheckoutPage() {
                     </span>
                     <span>{items.length}</span>
                   </div>
-                  <div className="flex justify-between font-semibold text-primary">
+
+                  {/* Price breakdown */}
+                  <div className="flex justify-between">
+                    <span className="text-slate-600">{t("subtotal")}</span>
+                    <span>{formatCurrency(displaySubtotal)}</span>
+                  </div>
+                  {displaySaleOff > 0 && (
+                    <div className="flex justify-between text-green-600">
+                      <span>{t("saleOffDiscount")}</span>
+                      <span>-{formatCurrency(displaySaleOff)}</span>
+                    </div>
+                  )}
+                  {displayDiscount > 0 && (
+                    <div className="flex justify-between text-green-600">
+                      <span>{t("discount")}</span>
+                      <span>-{formatCurrency(displayDiscount)}</span>
+                    </div>
+                  )}
+                  {summary?.giftValue && summary.giftValue > 0 && (
+                    <div className="flex justify-between text-green-600">
+                      <span>{tCart("giftValue")}</span>
+                      <span>-{formatCurrency(summary.giftValue)}</span>
+                    </div>
+                  )}
+                  {bestDiscount > 0 && (
+                    <div className="flex justify-between text-green-600">
+                      <span>{tCart("promotionDiscount")}</span>
+                      <span>-{formatCurrency(bestDiscount)}</span>
+                    </div>
+                  )}
+
+                  <div className="flex justify-between font-semibold text-primary pt-2 border-t border-slate-200">
                     <span>{t("confirm.total")}</span>
-                    <span>{formatCurrency(displayTotal)}</span>
+                    <span>{formatCurrency(Math.max(displayTotal - bestDiscount, 0))}</span>
                   </div>
                 </div>
               </div>

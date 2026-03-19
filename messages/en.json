@@ -311,6 +311,7 @@
     "subtotalLabel": "Subtotal:",
     "stockWarning": "Only {count} items left",
     "giftValue": "Gift value",
+    "promotionDiscount": "Promotion discount",
     "shippingNote": "Shipping calculated at checkout",
     "gifts": {
       "title": "🎁 Free Gifts",
@@ -326,6 +327,7 @@
       "discount": "Save {amount}₫",
       "discountPercent": "Save {percent}%",
       "freeShipping": "Free shipping",
+      "freeShippingApplied": "Free shipping applied",
       "buyMore": "Spend {amount}₫ more to get {benefit}",
       "bestDiscount": "Promotion",
       "minOrder": "Min. order {amount}₫",
@@ -520,9 +522,21 @@
       "new": "New",
       "confirmed": "Confirmed",
       "processing": "Processing",
-      "shipping": "Shipping",
-      "delivered": "Delivered"
-    }
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "completed": "Completed"
+    },
+    "cancelReason": "Cancellation Reason",
+    "shippingInfo": "Shipping Information",
+    "trackingNumber": "Tracking Number",
+    "carrier": "Carrier",
+    "expectedDelivery": "Expected Delivery",
+    "subtotal": "Subtotal",
+    "saleOffDiscount": "Product Discount",
+    "bundleDiscount": "Bundle Discount",
+    "couponDiscount": "Coupon Discount",
+    "shippingFee": "Shipping Fee",
+    "finalAmount": "Total"
   },
   "OrderSuccess": {
     "breadcrumb": "Order Success",
@@ -629,6 +643,40 @@
       "wishlist": "Wishlist",
       "addresses": "Address Book"
     }
+  },
+  "AccountOrders": {
+    "breadcrumb": "Orders",
+    "accountBreadcrumb": "Account",
+    "title": "My Orders",
+    "orderCount": "orders",
+    "empty": "You don't have any orders yet",
+    "emptyHint": "Start shopping and come back here!",
+    "continueShopping": "Continue Shopping",
+    "viewDetail": "Details",
+    "cancelOrder": "Cancel",
+    "cancelSuccess": "Order cancelled successfully!",
+    "cancelError": "Failed to cancel order. Please try again.",
+    "tabs": {
+      "all": "All",
+      "new": "New",
+      "confirmed": "Confirmed",
+      "processing": "Processing",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "cancelConfirm": {
+      "title": "Cancel Order?",
+      "message": "Are you sure you want to cancel order {orderCode}? This action cannot be undone."
+    },
+    "reorder": "Reorder",
+    "reorderLoading": "Adding...",
+    "reorderSuccess": "Added {count} items to cart!",
+    "reorderPartial": "Added {count}/{total} items (some items are out of stock)",
+    "reorderFailed": "Could not add items to cart.",
+    "reorderEmpty": "No items available to reorder.",
+    "reorderError": "An error occurred. Please try again."
   },
   "AccountProfile": {
     "breadcrumb": "My Account",
@@ -748,5 +796,12 @@
     "inactive": "Discontinued",
     "removeFromList": "Remove from list",
     "total": "{count} items"
+  },
+  "NewProductsPage": {
+    "breadcrumb": "New Products",
+    "title": "New Products",
+    "subtitle": "Latest products at TME",
+    "empty": "No new products available.",
+    "loadError": "Could not load new products."
   }
 }

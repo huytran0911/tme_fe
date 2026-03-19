@@ -232,6 +232,9 @@ export function useCart() {
   }, [cart, items, pendingQuantities]);
   const subtotal = useMemo(() => cart?.summary?.subtotal ?? 0, [cart]);
   const bundleDiscount = useMemo(() => cart?.summary?.bundleDiscount ?? 0, [cart]);
+  const saleOffDiscount = useMemo(() => cart?.summary?.saleOffDiscount ?? 0, [cart]);
+  const promotionDiscount = useMemo(() => cart?.summary?.promotionDiscount ?? 0, [cart]);
+  const appliedPromotion = useMemo(() => cart?.summary?.appliedPromotion ?? null, [cart]);
   const isEmpty = useMemo(() => !cart?.items || cart.items.length === 0, [cart]);
 
   // Loading states
@@ -265,6 +268,9 @@ export function useCart() {
     grandTotal,
     subtotal,
     bundleDiscount,
+    saleOffDiscount,
+    promotionDiscount,
+    appliedPromotion,
     isEmpty,
 
     // Loading states
